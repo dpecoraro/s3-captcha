@@ -36,6 +36,7 @@ switch ($action) {
     
         aws s3 cp index.html s3://captcha-ec0ec570-a253-2213-7cd4-194aa13aee93
         aws s3 cp error.html s3://captcha-ec0ec570-a253-2213-7cd4-194aa13aee93
+        aws s3 cp style.css  s3://captcha-ec0ec570-a253-2213-7cd4-194aa13aee93
         break
     }
     'destroy' {
