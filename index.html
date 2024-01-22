@@ -3,32 +3,59 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdhdlcpAAAAAD37o0Oz62JZyH4yd4V-gVoo40Qw" async defer></script>
     <title>Captcha site</title>
+    <script>
+      function onSubmit(token) {
+        console.log(token)
+      }
+    </script>
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
   </head>
   <body class="align">
     <div class="grid">
   
-      <form action="https://httpbin.org/post" method="POST" class="form login">
-  
+      <form class="form login">
         <div class="form__field">
           <label for="login__username"><svg class="icon">
               <use xlink:href="#icon-user"></use>
             </svg><span class="hidden">Username</span></label>
-          <input autocomplete="username" id="login__username" type="text" name="username" class="form__input" placeholder="Username" required>
+          <input 
+            autocomplete="username" 
+            id="login__username" 
+            type="text" 
+            name="username" 
+            class="form__input" 
+            placeholder="Username" 
+            required
+          >
         </div>
   
         <div class="form__field">
           <label for="login__password"><svg class="icon">
               <use xlink:href="#icon-lock"></use>
             </svg><span class="hidden">Password</span></label>
-          <input id="login__password" type="password" name="password" class="form__input" placeholder="Password" required>
+          <input 
+            id="login__password" 
+            type="password"
+            name="password" 
+            class="form__input" 
+            placeholder="Password" 
+            required
+            autocomplete="off"
+            >
         </div>
   
         <div class="form__field">
-          <input type="submit" value="Sign In">
+          <input  
+            type="submit" 
+            value="Sign In" 
+            class="g-recaptcha"
+            data-sitekey="6LdhdlcpAAAAAD37o0Oz62JZyH4yd4V-gVoo40Qw"
+            data-callback='onSubmit'
+            data-action='test'
+          >
         </div>
-  
       </form>
   
     </div>
@@ -46,3 +73,4 @@
     </svg>
   </body>
 </html>
+
